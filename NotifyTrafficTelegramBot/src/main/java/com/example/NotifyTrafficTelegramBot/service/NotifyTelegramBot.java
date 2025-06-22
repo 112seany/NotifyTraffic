@@ -83,7 +83,7 @@ public class NotifyTelegramBot extends TelegramLongPollingBot {
 
         if ("start_setup".equals(data)) {
             sessionStorage.startSession(chatId);
-            sendMessage(chatId, "📅 Введите дату прибытия на работу (например, 09:00):");
+            sendMessage(chatId, "📅 Введите время прибытия на работу (например, 09:00):");
         }
     }
 

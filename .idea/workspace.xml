@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fd38f0a-8e09-4e8c-83b7-98db4015be13" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/validation/UserRequestValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/dto/UserInformationDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/dto/UserInformationDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/dto/UserSessionDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/dto/UserSessionDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/service/NotifyTelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/service/NotifyTelegramBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/service/serviceUtils/CommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/service/serviceUtils/CommandHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/service/serviceUtils/FsmProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/service/serviceUtils/FsmProcessor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

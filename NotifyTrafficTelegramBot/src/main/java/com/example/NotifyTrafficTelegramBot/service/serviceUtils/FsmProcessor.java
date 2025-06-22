@@ -3,10 +3,13 @@ package com.example.NotifyTrafficTelegramBot.service.serviceUtils;
 import com.example.NotifyTrafficTelegramBot.dto.UserInformationDto;
 import com.example.NotifyTrafficTelegramBot.dto.UserSessionDto;
 import com.example.NotifyTrafficTelegramBot.enums.States;
+import com.example.NotifyTrafficTelegramBot.validation.UserRequestValidator;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.apache.catalina.User;
 import org.springframework.stereotype.Component;
 
+import java.util.Objects;
 import java.util.function.Consumer;
 
 @Component
@@ -25,21 +28,37 @@ public class FsmProcessor {
 
         switch (session.getState()) {
             case ASK_ARRIVAL_DATE -> {
+                if (!UserRequestValidator.isValidArrivalTime(message)) {
+                    replySender.accept("❗ Введите время в формате HH:mm (например, 08:30)");
+                    return true;
+                }
                 session.getInformationDto().setArrivalDate(message);
                 session.setState(States.ASK_HOME_ADDRESS);
                 replySender.accept("🏠 Введите домашний адрес:");
             }
             case ASK_HOME_ADDRESS -> {
+                if(Objects.isNull(message) || message.isBlank()) {
+                    replySender.accept("❗ Введите непустой домашний адрес");
+                    return true;
+                }
                 session.getInformationDto().setHomeAddress(message);
                 session.setState(States.ASK_WORK_ADDRESS);
                 replySender.accept("🏢 Введите адрес работы:");
             }
             case ASK_WORK_ADDRESS -> {
+                if(Objects.isNull(message) || message.isBlank()) {
+                    replySender.accept("❗ Введите непустой рабочий адрес");
+                    return true;
+                }
                 session.getInformationDto().setWorkAddress(message);
                 session.setState(States.ASK_TIMEZONE);
                 replySender.accept("🌍 Укажите часовой пояс (например, UTC+3):");
             }
             case ASK_TIMEZONE -> {
+                if (!UserRequestValidator.isValidTimezone(message)) {
+                    replySender.accept("❗ Укажите часовой пояс в формате UTC±N (например, UTC+3)");
+                    return true;
+                }
                 session.getInformationDto().setTimezone(message);
                 session.setState(States.DONE);
                 replySender.accept("✅ Все данные получены:\n\n" + format(session.getInformationDto()));
