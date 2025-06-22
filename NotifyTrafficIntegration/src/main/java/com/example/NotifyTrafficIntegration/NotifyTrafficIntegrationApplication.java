@@ -11,5 +11,4 @@ public class NotifyTrafficIntegrationApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(NotifyTrafficIntegrationApplication.class, args);
 	}
-
 }
