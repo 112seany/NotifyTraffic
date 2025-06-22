@@ -1,12 +1,11 @@
 package com.example.NotifyTrafficTelegramBot.service;
 
-import com.example.NotifyTrafficTelegramBot.dto.UserSessionDto;
 import com.example.NotifyTrafficTelegramBot.service.serviceUtils.CommandHandler;
 import com.example.NotifyTrafficTelegramBot.service.serviceUtils.FsmProcessor;
 import com.example.NotifyTrafficTelegramBot.service.serviceUtils.SessionStorage;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -17,25 +16,36 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKe
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 @Service
 @Getter
 @Setter
 public class NotifyTelegramBot extends TelegramLongPollingBot {
 
-    private final FsmProcessor fsmProcessor;
+    @Autowired
+    private FsmProcessor fsmProcessor;
 
-    private final CommandHandler commandHandler;
+    @Autowired
+    private CommandHandler commandHandler;
 
-    private final SessionStorage sessionStorage;
+    @Autowired
+    private SessionStorage sessionStorage;
 
     @Value("${telegram.bot.username}")
     private String botUsername;
 
     @Value("${telegram.bot.token}")
     private String botToken;
+
+    @Override
+    public String getBotUsername() {
+        return botUsername;
+    }
+
+    @Override
+    public String getBotToken() {
+        return botToken;
+    }
 
     public NotifyTelegramBot(FsmProcessor fsmProcessor, CommandHandler commandHandler, SessionStorage sessionStorage) {
         this.fsmProcessor = fsmProcessor;
@@ -56,14 +66,12 @@ public class NotifyTelegramBot extends TelegramLongPollingBot {
 
             boolean handled = commandHandler.handleCommand(
                     msg,
-                    chatId,
                     () -> sendStartMessage(chatId),
                     () -> sessionStorage.endSession(chatId),
                     text -> sendMessage(chatId, text)
             );
 
             if (!handled) {
-                UserSessionDto session = sessionStorage.getSession(chatId);
                 fsmProcessor.handleFsmInput(chatId, msg, text -> sendMessage(chatId, text));
             }
         }

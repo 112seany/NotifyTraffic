@@ -13,4 +13,5 @@ import lombok.NoArgsConstructor;
 public class UserSessionDto {
     private States state = States.ASK_ARRIVAL_DATE;
     private UserInformationDto informationDto = new UserInformationDto();
+
 }

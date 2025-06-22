@@ -7,11 +7,12 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class UserInformationDto {
     private String arrivalDate;
     private String homeAddress;
     private String workAddress;
     private String timezone;
 }
+

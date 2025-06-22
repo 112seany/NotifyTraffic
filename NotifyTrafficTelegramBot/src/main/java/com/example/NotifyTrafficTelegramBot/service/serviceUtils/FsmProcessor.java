@@ -3,6 +3,7 @@ package com.example.NotifyTrafficTelegramBot.service.serviceUtils;
 import com.example.NotifyTrafficTelegramBot.dto.UserInformationDto;
 import com.example.NotifyTrafficTelegramBot.dto.UserSessionDto;
 import com.example.NotifyTrafficTelegramBot.enums.States;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.stereotype.Component;
 
@@ -10,13 +11,10 @@ import java.util.function.Consumer;
 
 @Component
 @Getter
+@AllArgsConstructor
 public class FsmProcessor {
 
-    private final SessionStorage sessionStorage;
-
-    public FsmProcessor(SessionStorage sessionStorage) {
-        this.sessionStorage = sessionStorage;
-    }
+    private SessionStorage sessionStorage;
 
     public boolean handleFsmInput(Long chatId, String message, Consumer<String> replySender) {
         UserSessionDto session = sessionStorage.getSession(chatId);

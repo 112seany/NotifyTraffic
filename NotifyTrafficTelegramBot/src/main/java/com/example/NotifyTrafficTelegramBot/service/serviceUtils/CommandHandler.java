@@ -7,7 +7,7 @@ import java.util.function.Consumer;
 @Component
 public class CommandHandler {
 
-    public boolean handleCommand(String msg, Long chatId, Runnable startCallback, Runnable cancelCallback, Consumer<String> replySender) {
+    public boolean handleCommand(String msg, Runnable startCallback, Runnable cancelCallback, Consumer<String> replySender) {
         return switch (msg) {
             case "/start" -> {
                 startCallback.run();
