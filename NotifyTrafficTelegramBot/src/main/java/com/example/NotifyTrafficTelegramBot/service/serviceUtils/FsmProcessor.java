@@ -3,10 +3,10 @@ package com.example.NotifyTrafficTelegramBot.service.serviceUtils;
 import com.example.NotifyTrafficTelegramBot.dto.UserInformationDto;
 import com.example.NotifyTrafficTelegramBot.dto.UserSessionDto;
 import com.example.NotifyTrafficTelegramBot.enums.States;
+import com.example.NotifyTrafficTelegramBot.gateway.NotifyIntegrationGateway;
 import com.example.NotifyTrafficTelegramBot.validation.UserRequestValidator;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import org.apache.catalina.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Objects;
@@ -14,9 +14,12 @@ import java.util.function.Consumer;
 
 @Component
 @Getter
-@AllArgsConstructor
 public class FsmProcessor {
 
+    @Autowired
+    private NotifyIntegrationGateway NotifyIntegrationGateway;
+
+    @Autowired
     private SessionStorage sessionStorage;
 
     public boolean handleFsmInput(Long chatId, String message, Consumer<String> replySender) {
@@ -32,8 +35,9 @@ public class FsmProcessor {
                     replySender.accept("❗ Введите время в формате HH:mm (например, 08:30)");
                     return true;
                 }
-                session.getInformationDto().setArrivalDate(message);
+                session.getInformationDto().setArrivalTime(message);
                 session.setState(States.ASK_HOME_ADDRESS);
+                session.getInformationDto().setTelegramUserId(chatId.toString());
                 replySender.accept("🏠 Введите домашний адрес:");
             }
             case ASK_HOME_ADDRESS -> {
@@ -61,15 +65,18 @@ public class FsmProcessor {
                 }
                 session.getInformationDto().setTimezone(message);
                 session.setState(States.DONE);
+                NotifyIntegrationGateway.sendUserInformation(session.getInformationDto());
                 replySender.accept("✅ Все данные получены:\n\n" + format(session.getInformationDto()));
             }
-            case DONE -> replySender.accept("👋 Настройка завершена. Напишите /start для новой.");
+            case DONE -> {
+                replySender.accept("👋 Настройка завершена. Напишите /start для новой.");
+            }
         }
         return true;
     }
 
     private String format(UserInformationDto data) {
-        return "📅 Дата прибытия: " + data.getArrivalDate() + "\n" +
+        return "📅 Дата прибытия: " + data.getArrivalTime() + "\n" +
                 "🏠 Домашний адрес: " + data.getHomeAddress() + "\n" +
                 "🏢 Адрес работы: " + data.getWorkAddress() + "\n" +
                 "🕒 Часовой пояс: " + data.getTimezone();

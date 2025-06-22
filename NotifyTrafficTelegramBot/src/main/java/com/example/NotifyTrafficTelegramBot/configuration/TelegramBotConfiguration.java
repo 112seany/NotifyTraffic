@@ -1,4 +1,4 @@
-package com.example.NotifyTrafficTelegramBot.config;
+package com.example.NotifyTrafficTelegramBot.configuration;
 
 import com.example.NotifyTrafficTelegramBot.service.NotifyTelegramBot;
 import org.springframework.context.annotation.Bean;
@@ -8,7 +8,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
 @Configuration
-public class TelegramBotConfig {
+public class TelegramBotConfiguration {
 
     @Bean
     public TelegramBotsApi telegramBotsApi(NotifyTelegramBot notifyTelegramBot) throws TelegramApiException {

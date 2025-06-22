@@ -1,5 +1,6 @@
 package com.example.NotifyTrafficTelegramBot.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,9 +11,20 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserInformationDto {
-    private String arrivalDate;
+
+    @JsonProperty("telegramUserId")
+    private String telegramUserId;
+
+    @JsonProperty("arrivalTime")
+    private String arrivalTime;
+
+    @JsonProperty("homeAddress")
     private String homeAddress;
+
+    @JsonProperty("workAddress")
     private String workAddress;
+
+    @JsonProperty("timeZone")
     private String timezone;
 }
 
