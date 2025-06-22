@@ -1,4 +1,4 @@
-package com.example.NotifyTrafficTelegramBot.request;
+package com.example.NotifyTrafficTelegramBot.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,10 +9,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class NotifyRequest {
-    private Long telegramUserId;
-    private String arrivalTime;
+public class UserInformationDto {
+    private String arrivalDate;
     private String homeAddress;
     private String workAddress;
-    private String timeZone;
+    private String timezone;
 }
