@@ -1,9 +1,9 @@
-package com.example.NotifyTrafficIntegration.gateway;
+package com.example.NotifyTrafficIntegration.api;
 
 import com.example.NotifyTrafficIntegration.dto.DistanceMatrixRequestDto;
 import com.example.NotifyTrafficIntegration.dto.DistanceMatrixResponseDto;
 
-public interface TravelDurationGateway {
+public interface GoogleMapApiClient {
 
      DistanceMatrixResponseDto getDurationWithTraffic(DistanceMatrixRequestDto request);
 

@@ -3,7 +3,7 @@ package com.example.NotifyTrafficIntegration.mapper;
 import com.example.NotifyTrafficIntegration.dto.DistanceMatrixRequestDto;
 import com.example.NotifyTrafficIntegration.dto.GeocodingResponseDto;
 import com.example.NotifyTrafficIntegration.entity.UserSettingsEntity;
-import com.example.NotifyTrafficIntegration.rest.request.NotifyRequest;
+import com.example.NotifyTrafficIntegration.dto.NotifyRequest;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;

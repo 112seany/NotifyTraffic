@@ -1,4 +1,4 @@
-package com.example.NotifyTrafficIntegration.rest.response;
+package com.example.NotifyTrafficIntegration.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,4 +1,4 @@
-package com.example.NotifyTrafficIntegration.rest.response;
+package com.example.NotifyTrafficIntegration.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

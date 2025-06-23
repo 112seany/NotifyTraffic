@@ -1,4 +1,4 @@
-package com.example.NotifyTrafficIntegration.gateway;
+package com.example.NotifyTrafficIntegration.api;
 
 import com.example.NotifyTrafficIntegration.dto.DistanceMatrixRequestDto;
 import com.example.NotifyTrafficIntegration.dto.DistanceMatrixResponseDto;
@@ -11,23 +11,24 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Component
-public class TravelDurationGatewayImpl implements TravelDurationGateway {
+public class GoogleMapApiClientImpl implements GoogleMapApiClient {
 
     @Value("${google.maps.token}")
     private String apiKey;
+
+    @Value("${google.maps.distance-matrix-url}")
+    private String distanceMatrixUrl;
 
     @Autowired
     private RestTemplate restTemplate;
 
     @Override
     public DistanceMatrixResponseDto getDurationWithTraffic(DistanceMatrixRequestDto request) {
-        String url = "https://maps.googleapis.com/maps/api/distancematrix/json?origins={origins}&mode=driving&departure_time=now"+
-                "&traffic_model=best_guess&key={key}&destinations={destinations}";
         Map<String, String> queryParams = new HashMap<>();
         queryParams.put("origins", request.getOrigins());
         queryParams.put("destinations", request.getDestinations());
         queryParams.put("key", apiKey);
 
-        return restTemplate.getForObject(url, DistanceMatrixResponseDto.class, queryParams);
+        return restTemplate.getForObject(distanceMatrixUrl, DistanceMatrixResponseDto.class, queryParams);
     }
 }

@@ -1,7 +1,7 @@
-package com.example.NotifyTrafficIntegration.rest;
+package com.example.NotifyTrafficIntegration.controller;
 
-import com.example.NotifyTrafficIntegration.rest.request.NotifyRequest;
-import com.example.NotifyTrafficIntegration.rest.response.NotifyResponse;
+import com.example.NotifyTrafficIntegration.dto.NotifyRequest;
+import com.example.NotifyTrafficIntegration.dto.NotifyResponse;
 import com.example.NotifyTrafficIntegration.service.NotifyUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

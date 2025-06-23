@@ -1,7 +1,7 @@
 package com.example.NotifyTrafficIntegration.service;
 
-import com.example.NotifyTrafficIntegration.rest.request.NotifyRequest;
-import com.example.NotifyTrafficIntegration.rest.response.NotifyResponse;
+import com.example.NotifyTrafficIntegration.dto.NotifyRequest;
+import com.example.NotifyTrafficIntegration.dto.NotifyResponse;
 
 public interface NotifyUserService {
 
