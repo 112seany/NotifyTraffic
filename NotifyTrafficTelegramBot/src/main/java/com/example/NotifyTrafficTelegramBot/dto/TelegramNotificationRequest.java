@@ -1,4 +1,4 @@
-package com.example.NotifyTrafficTelegramBot.rest.requests;
+package com.example.NotifyTrafficTelegramBot.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

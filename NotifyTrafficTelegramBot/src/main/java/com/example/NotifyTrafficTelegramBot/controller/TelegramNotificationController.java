@@ -1,6 +1,6 @@
-package com.example.NotifyTrafficTelegramBot.rest;
+package com.example.NotifyTrafficTelegramBot.controller;
 
-import com.example.NotifyTrafficTelegramBot.rest.requests.TelegramNotificationRequest;
+import com.example.NotifyTrafficTelegramBot.dto.TelegramNotificationRequest;
 import com.example.NotifyTrafficTelegramBot.service.NotifyTelegramBot;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

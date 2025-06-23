@@ -5,32 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fd38f0a-8e09-4e8c-83b7-98db4015be13" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/api/GeoDataClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/api/TelegramNotificationApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/api/TelegramNotificationApiImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/scheduler/NotificationScheduler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/resources/db/changelog/v1.0.0/db.changelog-master.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/NotifyTrafficIntegrationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/NotifyTrafficIntegrationApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/gateway/CoordinatesGateway.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/gateway/CoordinatesGatewayImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/gateway/TelegramNotificationGateway.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/gateway/TelegramNotificationGatewayImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/gateway/TravelDurationGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/api/GoogleMapApiClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/gateway/TravelDurationGatewayImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/api/GoogleMapApiClientImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/mapper/NotifyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/mapper/NotifyMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/repository/NotifyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/repository/NotifyRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/rest/NotifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/controller/NotifyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/rest/request/NotifyRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/dto/NotifyRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/rest/response/NotifyResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/dto/NotifyResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/rest/response/TelegramNotifyResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/dto/TelegramNotifyResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/service/NotifyUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/service/NotifyUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/service/NotifyUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/service/NotifyUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/resources/db/changelog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/resources/db/changelog/v1.0.0/001-db.changelog-create-user-information-table.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NotifyTrafficTelegramBot/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficTelegramBot/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/gateway/NotifyIntegrationGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/gateway/NotifyIntegrationApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/gateway/NotifyIntegrationGatewayImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/gateway/NotifyIntegrationGatewayImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/rest/TelegramNotificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/controller/TelegramNotificationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/rest/requests/TelegramNotificationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/dto/TelegramNotificationRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/service/serviceUtils/FsmProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/service/serviceUtils/FsmProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +79,7 @@
       <recent name="com.example.NotifyTrafficIntegration.dto" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.NotifyTrafficTelegramBotApplication">
+  <component name="RunManager" selected="Application.NotifyTrafficIntegrationApplication">
     <configuration name="NotifyTrafficIntegrationApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.NotifyTrafficIntegration.NotifyTrafficIntegrationApplication" />
       <module name="NotifyTrafficIntegration" />
@@ -126,8 +108,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.NotifyTrafficTelegramBotApplication" />
         <item itemvalue="Application.NotifyTrafficIntegrationApplication" />
+        <item itemvalue="Application.NotifyTrafficTelegramBotApplication" />
       </list>
     </recent_temporary>
   </component>

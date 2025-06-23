@@ -1,8 +1,6 @@
 package com.example.NotifyTrafficIntegration.service;
 
 import com.example.NotifyTrafficIntegration.api.GeoDataClient;
-import com.example.NotifyTrafficIntegration.api.GoogleMapApiClient;
-import com.example.NotifyTrafficIntegration.api.TelegramNotificationApi;
 import com.example.NotifyTrafficIntegration.dto.GeocodingResponseDto;
 import com.example.NotifyTrafficIntegration.dto.NotifyRequest;
 import com.example.NotifyTrafficIntegration.dto.NotifyResponse;
