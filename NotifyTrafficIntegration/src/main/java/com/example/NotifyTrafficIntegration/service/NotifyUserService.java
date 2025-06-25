@@ -6,4 +6,6 @@ import com.example.NotifyTrafficIntegration.dto.NotifyResponse;
 public interface NotifyUserService {
 
     NotifyResponse setNotification(NotifyRequest notifyRequest);
+
+    void processNotificationCycle();
 }
