@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: notify_postgres
+    environment:
+      POSTGRES_DB: NotifyDB
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  integration:
+    image: 112seany/notify-integration:latest
+    container_name: notify_integration
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/NotifyDB
+      SPRING_DATASOURCE_USERNAME: ${DB_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
+      GOOGLE_MAPS_TOKEN: ${GOOGLE_MAPS_TOKEN}
+    depends_on:
+      - postgres
+    ports:
+      - "8081:8080"
+
+  telegram-bot:
+    image: 112seany/notify-telegram:latest
+    container_name: notify_telegram
+    environment:
+      TELEGRAM_BOT_USERNAME: ${TELEGRAM_BOT_USERNAME}
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+    depends_on:
+      - integration
+    ports:
+      - "8082:8080"
+
+volumes:
+  pg_data:

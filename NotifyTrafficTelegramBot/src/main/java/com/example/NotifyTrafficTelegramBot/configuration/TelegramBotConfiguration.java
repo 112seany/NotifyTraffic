@@ -16,5 +16,4 @@ public class TelegramBotConfiguration {
         botsApi.registerBot(notifyTelegramBot);
         return botsApi;
     }
-
 }

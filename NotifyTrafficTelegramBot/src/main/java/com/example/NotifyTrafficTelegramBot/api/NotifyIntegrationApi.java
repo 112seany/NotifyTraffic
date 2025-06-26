@@ -2,7 +2,6 @@ package com.example.NotifyTrafficTelegramBot.api;
 
 import com.example.NotifyTrafficTelegramBot.dto.UserInformationDto;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -12,6 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 )
 public interface NotifyIntegrationApi {
 
-     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+     @PostMapping("/address")
      void sendUserInformation(@RequestBody UserInformationDto dto);
 }
