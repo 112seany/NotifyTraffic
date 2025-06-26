@@ -47,7 +47,10 @@ public class NotifyTelegramBot extends TelegramLongPollingBot {
         return botToken;
     }
 
-    public NotifyTelegramBot(FsmProcessor fsmProcessor, CommandHandler commandHandler, SessionStorage sessionStorage) {
+    public NotifyTelegramBot(FsmProcessor fsmProcessor,
+                             CommandHandler commandHandler,
+                             SessionStorage sessionStorage) {
+
         this.fsmProcessor = fsmProcessor;
         this.commandHandler = commandHandler;
         this.sessionStorage = sessionStorage;

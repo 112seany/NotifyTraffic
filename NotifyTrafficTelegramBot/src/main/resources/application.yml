@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: NotifyTrafficTelegramBot
+
+telegram:
+  bot:
+    username: ${TELEGRAM_BOT_USERNAME}
+    token: ${TELEGRAM_BOT_TOKEN}
+
+notify:
+  service:
+    url: http://notify_integration:8081
+
+server:
+  address: 0.0.0.0
+  port: 8080

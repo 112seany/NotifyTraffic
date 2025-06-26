@@ -3,7 +3,7 @@ package com.example.NotifyTrafficTelegramBot.service.serviceUtils;
 import com.example.NotifyTrafficTelegramBot.dto.UserInformationDto;
 import com.example.NotifyTrafficTelegramBot.dto.UserSessionDto;
 import com.example.NotifyTrafficTelegramBot.enums.States;
-import com.example.NotifyTrafficTelegramBot.gateway.NotifyIntegrationGateway;
+import com.example.NotifyTrafficTelegramBot.api.NotifyIntegrationApi;
 import com.example.NotifyTrafficTelegramBot.validation.UserRequestValidator;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class FsmProcessor {
 
     @Autowired
-    private NotifyIntegrationGateway NotifyIntegrationGateway;
+    private NotifyIntegrationApi NotifyIntegrationApi;
 
     @Autowired
     private SessionStorage sessionStorage;
@@ -65,7 +65,7 @@ public class FsmProcessor {
                 }
                 session.getInformationDto().setTimezone(message);
                 session.setState(States.DONE);
-                NotifyIntegrationGateway.sendUserInformation(session.getInformationDto());
+                NotifyIntegrationApi.sendUserInformation(session.getInformationDto());
                 replySender.accept("✅ Все данные получены:\n\n" + format(session.getInformationDto()));
             }
             case DONE -> {

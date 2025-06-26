@@ -5,32 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fd38f0a-8e09-4e8c-83b7-98db4015be13" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/api/GeoDataClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/api/TelegramNotificationApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/api/TelegramNotificationApiImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/scheduler/NotificationScheduler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/resources/db/changelog/v1.0.0/db.changelog-master.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NotifyTrafficTelegramBot/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/NotifyTrafficIntegrationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/NotifyTrafficIntegrationApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/gateway/CoordinatesGateway.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/gateway/CoordinatesGatewayImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/gateway/TelegramNotificationGateway.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/gateway/TelegramNotificationGatewayImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/gateway/TravelDurationGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/api/GoogleMapApiClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/gateway/TravelDurationGatewayImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/api/GoogleMapApiClientImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/mapper/NotifyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/mapper/NotifyMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/repository/NotifyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/repository/NotifyRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/rest/NotifyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/controller/NotifyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/rest/request/NotifyRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/dto/NotifyRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/rest/response/NotifyResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/dto/NotifyResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/rest/response/TelegramNotifyResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/dto/TelegramNotifyResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/service/NotifyUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/service/NotifyUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/service/NotifyUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/service/NotifyUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/resources/db/changelog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/resources/db/changelog/v1.0.0/001-db.changelog-create-user-information-table.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/api/TelegramNotificationApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/java/com/example/NotifyTrafficIntegration/api/TelegramNotificationApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/api/NotifyIntegrationApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/api/NotifyIntegrationApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/configuration/TelegramBotConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/configuration/TelegramBotConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/controller/TelegramNotificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/controller/TelegramNotificationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/service/NotifyTelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/java/com/example/NotifyTrafficTelegramBot/service/NotifyTelegramBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficTelegramBot/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +40,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/liquibase/liquibase-core/4.29.2/liquibase-core-4.29.2.jar!/liquibase/Scope.class" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
@@ -69,6 +58,7 @@
   &quot;keyToString&quot;: {
     &quot;Application.NotifyTrafficIntegrationApplication.executor&quot;: &quot;Run&quot;,
     &quot;Application.NotifyTrafficTelegramBotApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Maven.NotifyTrafficIntegration [clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.NotifyTrafficIntegration [compile].executor&quot;: &quot;Run&quot;,
     &quot;Maven.NotifyTrafficIntegration [install].executor&quot;: &quot;Run&quot;,
@@ -79,7 +69,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/andre/IdeaProjects/NotifyTraffic/NotifyTrafficIntegration&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/andre/IdeaProjects/NotifyTraffic/docker-compose.yml&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
@@ -97,7 +87,7 @@
       <recent name="com.example.NotifyTrafficIntegration.dto" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.NotifyTrafficTelegramBotApplication">
+  <component name="RunManager" selected="Application.NotifyTrafficIntegrationApplication">
     <configuration name="NotifyTrafficIntegrationApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.NotifyTrafficIntegration.NotifyTrafficIntegrationApplication" />
       <module name="NotifyTrafficIntegration" />
@@ -124,14 +114,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="envVars">
+            <list>
+              <DockerEnvVarImpl>
+                <option name="name" value="DB_PASSWORD" />
+                <option name="value" value="postgre" />
+              </DockerEnvVarImpl>
+              <DockerEnvVarImpl>
+                <option name="name" value="DB_USERNAME" />
+                <option name="value" value="postgre" />
+              </DockerEnvVarImpl>
+              <DockerEnvVarImpl>
+                <option name="name" value="GOOGLE_MAPS_TOKEN" />
+                <option name="value" value="AIzaSyD7EiwFgtZ3WCcPi6uGRRiVeDqLJQtaejw" />
+              </DockerEnvVarImpl>
+              <DockerEnvVarImpl>
+                <option name="name" value="TELEGRAM_BOT_TOKEN" />
+                <option name="value" value="7674319957:AAFcouX5Rn6EJPUfizzkFRde9bSmyUnPeR0" />
+              </DockerEnvVarImpl>
+              <DockerEnvVarImpl>
+                <option name="name" value="TELEGRAM_BOT_USERNAME" />
+                <option name="value" value="AllNamesIsAlreadyTaken_bot" />
+              </DockerEnvVarImpl>
+            </list>
+          </option>
+          <option name="removeOrphansOnComposeDown" value="false" />
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Application.NotifyTrafficIntegrationApplication" />
       <item itemvalue="Application.NotifyTrafficTelegramBotApplication" />
+      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.NotifyTrafficTelegramBotApplication" />
         <item itemvalue="Application.NotifyTrafficIntegrationApplication" />
+        <item itemvalue="Application.NotifyTrafficTelegramBotApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -175,6 +200,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.springframework.beans.factory.BeanCreationNotAllowedException" package="org.springframework.beans.factory" />
+          <option name="timeStamp" value="2" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

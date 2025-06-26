@@ -1,7 +1,8 @@
-package com.example.NotifyTrafficTelegramBot.rest;
+package com.example.NotifyTrafficTelegramBot.controller;
 
-import com.example.NotifyTrafficTelegramBot.rest.requests.TelegramNotificationRequest;
+import com.example.NotifyTrafficTelegramBot.dto.TelegramNotificationRequest;
 import com.example.NotifyTrafficTelegramBot.service.NotifyTelegramBot;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,10 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/telegram/api")
+@AllArgsConstructor
 public class TelegramNotificationController {
 
-    @Autowired
-    private NotifyTelegramBot notifyTelegramBot;
+    private final NotifyTelegramBot notifyTelegramBot;
 
     @PostMapping("/notification")
     public ResponseEntity<Void> notify(@RequestBody TelegramNotificationRequest request) {
