@@ -4,12 +4,13 @@ spring:
 
 telegram:
   bot:
-    username: AllNamesIsAlreadyTaken_bot
-    token: 7674319957:AAFcouX5Rn6EJPUfizzkFRde9bSmyUnPeR0
+    username: ${TELEGRAM_BOT_USERNAME}
+    token: ${TELEGRAM_BOT_TOKEN}
 
 notify:
   service:
-    url: http://localhost:8080/address
+    url: http://notify_integration:8081
 
 server:
-  port: 8081
+  address: 0.0.0.0
+  port: 8080
