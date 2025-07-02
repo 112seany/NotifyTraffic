@@ -31,14 +31,16 @@ jobs:
       - name: Build and push notify-integration image
         uses: docker/build-push-action@v5
         with:
-          context: ./notify-integration
+          context: ./NotifyTrafficIntegration
+          file: ./NotifyTrafficIntegration/Dockerfile
           push: true
           tags: ${{ env.IMAGE_INTEGRATION }}:latest
 
       - name: Build and push notify-telegram image
         uses: docker/build-push-action@v5
         with:
-          context: ./notify-telegram
+          context: ./NotifyTrafficTelegramBot
+          file: ./NotifyTrafficTelegramBot/Dockerfile
           push: true
           tags: ${{ env.IMAGE_TELEGRAM }}:latest
 
