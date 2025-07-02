@@ -12,6 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 )
 public interface TelegramNotificationApi {
 
-    @PostMapping("/notification")
-    void notifyUser(@RequestBody TelegramNotifyResponse telegramNotifyRequest);
+    @PostMapping("/telegram/api/notification")
+    void notifyUser(@RequestBody TelegramNotifyResponse telegramNotifyResponse);
 }

@@ -1,9 +1,9 @@
 package com.example.NotifyTrafficTelegramBot.service.serviceUtils;
 
+import com.example.NotifyTrafficTelegramBot.api.NotifyIntegrationApi;
 import com.example.NotifyTrafficTelegramBot.dto.UserInformationDto;
 import com.example.NotifyTrafficTelegramBot.dto.UserSessionDto;
 import com.example.NotifyTrafficTelegramBot.enums.States;
-import com.example.NotifyTrafficTelegramBot.api.NotifyIntegrationApi;
 import com.example.NotifyTrafficTelegramBot.validation.UserRequestValidator;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,7 +76,7 @@ public class FsmProcessor {
     }
 
     private String format(UserInformationDto data) {
-        return "📅 Дата прибытия: " + data.getArrivalTime() + "\n" +
+        return "📅 Время прибытия: " + data.getArrivalTime() + "\n" +
                 "🏠 Домашний адрес: " + data.getHomeAddress() + "\n" +
                 "🏢 Адрес работы: " + data.getWorkAddress() + "\n" +
                 "🕒 Часовой пояс: " + data.getTimezone();

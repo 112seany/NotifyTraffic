@@ -9,7 +9,7 @@ telegram:
 
 notify:
   service:
-    url: http://notify_integration:8081
+    url: ${NOTIFICATION_SERVICE_URL}
 
 server:
   address: 0.0.0.0

@@ -32,4 +32,9 @@ google:
 
 telegram:
   service:
-    url: http://notify_telegram:8080/telegram/api
+    url: ${TELEGRAM_SERVICE_URL}
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE

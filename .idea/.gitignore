@@ -27,7 +27,8 @@ build/
 !**/src/test/**/build/
 
 workspace.xml
-.env.*
-!.env.example
+
+local.env
+prod.env
 
 .vscode/

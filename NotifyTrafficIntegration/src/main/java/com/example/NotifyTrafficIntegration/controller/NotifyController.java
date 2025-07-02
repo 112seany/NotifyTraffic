@@ -21,5 +21,4 @@ public class NotifyController {
     public ResponseEntity<NotifyResponse> setNotification(@RequestBody NotifyRequest address) {
         return ResponseEntity.ok(notifyUserService.setNotification(address));
     }
-
 }
