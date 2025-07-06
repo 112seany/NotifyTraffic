@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9fd38f0a-8e09-4e8c-83b7-98db4015be13" name="Changes" comment="" />
+    <list default="true" id="9fd38f0a-8e09-4e8c-83b7-98db4015be13" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NotifyTrafficIntegration/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficIntegration/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NotifyTrafficTelegramBot/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/NotifyTrafficTelegramBot/Dockerfile" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

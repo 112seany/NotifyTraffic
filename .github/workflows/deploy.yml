@@ -28,7 +28,28 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: Detect changes in NotifyTrafficIntegration
+        id: integration_changed
+        run: |
+          git fetch origin ${{ github.event.before }}
+          if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -q '^NotifyTrafficIntegration/'; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Detect changes in NotifyTrafficTelegramBot
+        id: telegram_changed
+        run: |
+          git fetch origin ${{ github.event.before }}
+          if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -q '^NotifyTrafficTelegramBot/'; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: Build and push notify-integration image
+        if: steps.integration_changed.outputs.changed == 'true'
         uses: docker/build-push-action@v5
         with:
           context: ./NotifyTrafficIntegration
@@ -37,6 +58,7 @@ jobs:
           tags: ${{ env.IMAGE_INTEGRATION }}:latest
 
       - name: Build and push notify-telegram image
+        if: steps.telegram_changed.outputs.changed == 'true'
         uses: docker/build-push-action@v5
         with:
           context: ./NotifyTrafficTelegramBot
@@ -71,7 +93,7 @@ jobs:
             TELEGRAM_SERVICE_URL=${{ secrets.TELEGRAM_SERVICE_URL }}
             EOF
 
-      - name: Deploy application
+      - name: Deploy updated services
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.SERVER_HOST }}
@@ -79,7 +101,20 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
             cd ~/app
-            docker compose down
-            docker pull ${{ env.IMAGE_INTEGRATION }}:latest
-            docker pull ${{ env.IMAGE_TELEGRAM }}:latest
-            docker compose up -d
+
+            INTEGRATION_CHANGED="${{ steps.integration_changed.outputs.changed }}"
+            TELEGRAM_CHANGED="${{ steps.telegram_changed.outputs.changed }}"
+
+            if [ "$INTEGRATION_CHANGED" = "true" ]; then
+              echo "Updating notify-integration..."
+              docker pull ${{ env.IMAGE_INTEGRATION }}:latest
+              docker compose up -d --no-deps --force-recreate integration
+            fi
+
+            if [ "$TELEGRAM_CHANGED" = "true" ]; then
+              echo "Updating notify-telegram..."
+              docker pull ${{ env.IMAGE_TELEGRAM }}:latest
+              docker compose up -d --no-deps --force-recreate telegram-bot
+            fi
+
+            rm -rf .env
