@@ -69,6 +69,12 @@ public class NotifyUserServiceImpl implements NotifyUserService {
                     notifyMapper.mapUserSettingsEntityToDistanceMatrixRequestDto(user),
                     apiKey
             );
+            if (responseDto == null ||
+                    responseDto.getRows().isEmpty() || responseDto.getRows().getFirst().getElements() == null ||
+                    responseDto.getRows().getFirst().getElements().isEmpty() ||
+                    responseDto.getRows().getFirst().getElements().getFirst().getDurationInTraffic() == null) {
+                continue;
+            }
 
             long travelSeconds = responseDto.getRows().getFirst()
                     .getElements().getFirst()
