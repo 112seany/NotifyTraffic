@@ -7,4 +7,4 @@ FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 COPY --from=builder /app/target/*.jar app.jar
 
-ENTRYPOINT ["java", "-XX:MaxRAM=300m", "-XX:+UseContainerSupport", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-XX:MaxRAM=512m", "-XX:+UseContainerSupport", "-jar", "app.jar"]
