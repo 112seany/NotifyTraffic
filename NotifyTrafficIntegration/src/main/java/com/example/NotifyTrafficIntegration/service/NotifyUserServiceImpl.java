@@ -12,7 +12,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.time.*;
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class NotifyUserServiceImpl implements NotifyUserService {
@@ -51,7 +53,11 @@ public class NotifyUserServiceImpl implements NotifyUserService {
         LocalTime windowStart = nowUtc.toLocalTime();
         LocalTime windowEnd = windowStart.plusHours(2);
 
-        List<UserSettingsEntity> users = notifyRepository.findUsersToNotify(windowStart, windowEnd);
+        List<UserSettingsEntity> users = Optional.ofNullable(notifyRepository.findUsersToNotify(windowStart, windowEnd)).orElse(Collections.emptyList());
+
+        if (users.isEmpty()) {
+            return;
+        }
 
         for (UserSettingsEntity user : users) {
             LocalTime arrivalTime = user.getArrivalTime();
