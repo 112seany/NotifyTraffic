@@ -53,7 +53,8 @@ public class NotifyUserServiceImpl implements NotifyUserService {
         LocalTime windowStart = nowUtc.toLocalTime();
         LocalTime windowEnd = windowStart.plusHours(2);
 
-        List<UserSettingsEntity> users = Optional.ofNullable(notifyRepository.findUsersToNotify(windowStart, windowEnd)).orElse(Collections.emptyList());
+        List<UserSettingsEntity> users = Optional.ofNullable(notifyRepository.findUsersToNotify(windowStart, windowEnd))
+                .orElse(Collections.emptyList());
 
         if (users.isEmpty()) {
             return;
@@ -65,10 +66,11 @@ public class NotifyUserServiceImpl implements NotifyUserService {
                     .atTime(arrivalTime)
                     .atZone(ZoneOffset.UTC);
 
-            DistanceMatrixResponseDto responseDto = googleMapApiClient.getDurationWithTraffic(
-                    notifyMapper.mapUserSettingsEntityToDistanceMatrixRequestDto(user),
-                    apiKey
-            );
+            DistanceMatrixRequestDto distanceMatrixRequestDto = notifyMapper.mapUserSettingsEntityToDistanceMatrixRequestDto(user);
+
+            DistanceMatrixResponseDto responseDto = googleMapApiClient.getDurationWithTraffic(distanceMatrixRequestDto.getOrigins(),
+                    distanceMatrixRequestDto.getDestinations(), apiKey);
+
             if (responseDto == null ||
                     responseDto.getRows().isEmpty() || responseDto.getRows().getFirst().getElements() == null ||
                     responseDto.getRows().getFirst().getElements().isEmpty() ||

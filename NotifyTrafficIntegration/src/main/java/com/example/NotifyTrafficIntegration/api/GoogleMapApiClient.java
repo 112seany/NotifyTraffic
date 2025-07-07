@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface GoogleMapApiClient {
 
      @GetMapping("/distancematrix/json")
-     DistanceMatrixResponseDto getDurationWithTraffic(@RequestBody DistanceMatrixRequestDto distanceMatrixRequestDto,
+     DistanceMatrixResponseDto getDurationWithTraffic(@RequestParam("origins") String origins,
+                                                      @RequestParam("destinations") String destinations,
                                                       @RequestParam("key") String apiKey);
 }

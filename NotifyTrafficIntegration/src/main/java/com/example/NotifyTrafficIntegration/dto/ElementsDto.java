@@ -12,6 +12,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ElementsDto {
 
-    @JsonProperty("duration_in_traffic")
+    @JsonProperty("duration")
     private DurationValueDto durationInTraffic;
 }
