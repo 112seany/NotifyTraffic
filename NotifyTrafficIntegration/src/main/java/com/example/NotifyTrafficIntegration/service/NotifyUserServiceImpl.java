@@ -53,8 +53,7 @@ public class NotifyUserServiceImpl implements NotifyUserService {
         LocalTime windowStart = nowUtc.toLocalTime();
         LocalTime windowEnd = windowStart.plusHours(2);
 
-        List<UserSettingsEntity> users = Optional.ofNullable(notifyRepository.findUsersToNotify(windowStart, windowEnd))
-                .orElse(Collections.emptyList());
+        List<UserSettingsEntity> users = Optional.ofNullable(notifyRepository.findUsersToNotify(windowStart, windowEnd)).orElse(Collections.emptyList());
 
         if (users.isEmpty()) {
             return;
@@ -66,13 +65,15 @@ public class NotifyUserServiceImpl implements NotifyUserService {
                     .atTime(arrivalTime)
                     .atZone(ZoneOffset.UTC);
 
-            DistanceMatrixRequestDto distanceMatrixRequestDto = notifyMapper.mapUserSettingsEntityToDistanceMatrixRequestDto(user);
+            DistanceMatrixRequestDto requestDto = notifyMapper.mapUserSettingsEntityToDistanceMatrixRequestDto(user);
 
-            DistanceMatrixResponseDto responseDto = googleMapApiClient.getDurationWithTraffic(distanceMatrixRequestDto.getOrigins(),
-                    distanceMatrixRequestDto.getDestinations(), apiKey);
+            DistanceMatrixResponseDto responseDto = googleMapApiClient.getDurationWithTraffic(requestDto.getOrigins(),
+                    requestDto.getDestinations(),
+                    apiKey
+            );
 
-            if (responseDto == null ||
-                    responseDto.getRows().isEmpty() || responseDto.getRows().getFirst().getElements() == null ||
+            if (responseDto == null || responseDto.getRows().isEmpty() ||
+                    responseDto.getRows().getFirst().getElements() == null ||
                     responseDto.getRows().getFirst().getElements().isEmpty() ||
                     responseDto.getRows().getFirst().getElements().getFirst().getDurationInTraffic() == null) {
                 continue;
