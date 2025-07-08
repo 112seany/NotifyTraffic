@@ -15,7 +15,7 @@ public class NotificationScheduler {
     @Autowired
     private NotifyUserService notifyUserService;
 
-    @Scheduled(cron = "0 */5 4-18 * * MON-FRI", zone = "UTC")
+    @Scheduled(cron = "*/5 4-18 * * MON-FRI")
     public void scheduleUserNotifications() {
         notifyUserService.processNotificationCycle();
     }

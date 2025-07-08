@@ -65,12 +65,15 @@ public class NotifyUserServiceImpl implements NotifyUserService {
                     .atTime(arrivalTime)
                     .atZone(ZoneOffset.UTC);
 
-            DistanceMatrixResponseDto responseDto = googleMapApiClient.getDurationWithTraffic(
-                    notifyMapper.mapUserSettingsEntityToDistanceMatrixRequestDto(user),
+            DistanceMatrixRequestDto requestDto = notifyMapper.mapUserSettingsEntityToDistanceMatrixRequestDto(user);
+
+            DistanceMatrixResponseDto responseDto = googleMapApiClient.getDurationWithTraffic(requestDto.getOrigins(),
+                    requestDto.getDestinations(),
                     apiKey
             );
-            if (responseDto == null ||
-                    responseDto.getRows().isEmpty() || responseDto.getRows().getFirst().getElements() == null ||
+
+            if (responseDto == null || responseDto.getRows().isEmpty() ||
+                    responseDto.getRows().getFirst().getElements() == null ||
                     responseDto.getRows().getFirst().getElements().isEmpty() ||
                     responseDto.getRows().getFirst().getElements().getFirst().getDurationInTraffic() == null) {
                 continue;
